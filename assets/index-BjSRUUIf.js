@@ -41,7 +41,7 @@ Error generating stack: `+e.message+`
                 transition-all duration-300\r
                 flex items-center gap-3\r
                 text-sm sm:text-base\r
-              `,children:[(0,W.jsx)(ju,{size:20}),(0,W.jsx)(`span`,{className:`font-medium`,children:`LinkedIn`})]}),(0,W.jsxs)(`a`,{href:`#`,className:`\r
+              `,children:[(0,W.jsx)(ju,{size:20}),(0,W.jsx)(`span`,{className:`font-medium`,children:`LinkedIn`})]}),(0,W.jsxs)(`a`,{href:`https://github.com/alson26899/`,target:`_blank`,className:`\r
                 group\r
                 bg-slate-100 dark:bg-white/5\r
                 border border-slate-300 dark:border-white/10\r
