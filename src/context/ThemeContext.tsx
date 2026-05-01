@@ -3,8 +3,9 @@ import {
   useContext,
   useEffect,
   useState,
-  ReactNode
 } from 'react'
+
+import type { ReactNode } from 'react'
 
 interface ThemeContextType {
   theme: 'dark' | 'light'
