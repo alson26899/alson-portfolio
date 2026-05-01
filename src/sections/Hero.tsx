@@ -128,7 +128,8 @@ export default function Hero() {
 
             {/* GitHub */}
             <a
-              href="#"
+              href="https://github.com/alson26899/"
+              target="_blank"
               className="
                 group
                 bg-slate-100 dark:bg-white/5
