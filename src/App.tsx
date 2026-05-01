@@ -3,6 +3,7 @@ import About from './sections/About'
 import Skills from './sections/Skills'
 import Experience from './sections/Experience'
 import Projects from './sections/Projects'
+import Certificates from './sections/Certificates'
 import Contact from './sections/Contact'
 import ThemeToggle from './components/ThemeToggle'
 
@@ -31,6 +32,8 @@ export default function App() {
       <Experience />
 
       <Projects />
+
+      <Certificates />
 
       <Contact />
 
