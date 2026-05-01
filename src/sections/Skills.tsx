@@ -172,33 +172,33 @@ export default function Skills() {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   return (
-    <section className="relative py-32 px-6 overflow-hidden">
+    <section className="relative py-20 sm:py-24 md:py-32 px-4 sm:px-6 overflow-hidden">
 
       {/* Glow Effects */}
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-cyan-500/10 blur-[120px] rounded-full" />
+      <div className="absolute top-0 left-0 w-[250px] sm:w-[500px] h-[250px] sm:h-[500px] bg-cyan-500/10 blur-[120px] rounded-full" />
 
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-violet-500/10 blur-[120px] rounded-full" />
+      <div className="absolute bottom-0 right-0 w-[250px] sm:w-[500px] h-[250px] sm:h-[500px] bg-violet-500/10 blur-[120px] rounded-full" />
 
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="max-w-6xl mx-auto w-full relative z-10">
 
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-16"
+          className="mb-12 sm:mb-16"
         >
-          <p className="text-cyan-500 dark:text-cyan-400 font-semibold tracking-widest uppercase mb-4">
+          <p className="text-cyan-500 dark:text-cyan-400 font-semibold tracking-widest uppercase mb-4 text-sm sm:text-base">
             Tech Stack
           </p>
 
-          <h2 className="text-5xl md:text-7xl font-black text-slate-900 dark:text-white tracking-tight">
+          <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-slate-900 dark:text-white tracking-tight leading-tight">
             Technologies I use
           </h2>
         </motion.div>
 
         {/* Accordion */}
-        <div className="space-y-5">
+        <div className="space-y-4 sm:space-y-5">
 
           {skillGroups.map((group, index) => {
             const isOpen = openIndex === index
@@ -229,28 +229,35 @@ export default function Skills() {
                   }
                   className="
                     w-full
-                    px-8 py-6
+                    px-5 sm:px-8
+                    py-5 sm:py-6
                     flex items-center justify-between
+                    gap-4
                     text-left
                   "
                 >
+
                   <div>
-                    <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+
+                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
                       {group.title}
                     </h3>
 
-                    <p className="text-slate-600 dark:text-slate-400 mt-1">
+                    <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-1">
                       {group.skills.length} technologies
                     </p>
+
                   </div>
 
                   <ChevronDown
                     className={`
+                      shrink-0
                       text-slate-700 dark:text-white
                       transition-transform duration-300
                       ${isOpen ? 'rotate-180' : ''}
                     `}
                   />
+
                 </button>
 
                 {/* Accordion Content */}
@@ -263,9 +270,10 @@ export default function Skills() {
                   transition={{ duration: 0.35 }}
                   className="overflow-hidden"
                 >
-                  <div className="px-8 pb-8">
 
-                    <div className="flex flex-wrap gap-4">
+                  <div className="px-5 sm:px-8 pb-6 sm:pb-8">
+
+                    <div className="flex flex-wrap gap-3 sm:gap-4">
 
                       {group.skills.map((skill) => (
                         <motion.div
@@ -278,7 +286,7 @@ export default function Skills() {
                             bg-white dark:bg-[#081121]
                             border border-slate-300 dark:border-white/10
                             rounded-2xl
-                            px-5 py-4
+                            px-4 py-3
                             flex items-center gap-3
                             shadow-md
                             hover:border-cyan-400/40
@@ -287,14 +295,15 @@ export default function Skills() {
                         >
 
                           {/* Icon */}
-                          <div className={`text-2xl ${skill.color}`}>
+                          <div className={`text-xl sm:text-2xl ${skill.color}`}>
                             {skill.icon}
                           </div>
 
                           {/* Text */}
-                          <span className="font-semibold text-slate-900 dark:text-white">
+                          <span className="text-sm sm:text-base font-semibold text-slate-900 dark:text-white">
                             {skill.name}
                           </span>
+
                         </motion.div>
                       ))}
                     </div>

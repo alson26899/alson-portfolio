@@ -11,13 +11,13 @@ export default function Hero() {
   const { theme } = useTheme()
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 bg-slate-200 dark:bg-[#020617] transition-colors duration-300">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6 py-24 bg-slate-200 dark:bg-[#020617] transition-colors duration-300">
 
       {/* Left Glow */}
-      <div className="absolute top-[-120px] left-[-120px] w-[700px] h-[700px] bg-cyan-500/20 blur-[140px] rounded-full" />
+      <div className="absolute top-[-120px] left-[-120px] w-[300px] sm:w-[700px] h-[300px] sm:h-[700px] bg-cyan-500/20 blur-[140px] rounded-full" />
 
       {/* Right Glow */}
-      <div className="absolute bottom-[-120px] right-[-120px] w-[700px] h-[700px] bg-violet-600/20 blur-[140px] rounded-full" />
+      <div className="absolute bottom-[-120px] right-[-120px] w-[300px] sm:w-[700px] h-[300px] sm:h-[700px] bg-violet-600/20 blur-[140px] rounded-full" />
 
       {/* Grid */}
       <div
@@ -36,11 +36,17 @@ export default function Hero() {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="relative z-20 max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center"
+        className="
+          relative z-20
+          max-w-7xl mx-auto w-full
+          grid lg:grid-cols-2
+          gap-14 lg:gap-20
+          items-center
+        "
       >
 
         {/* Left Side */}
-        <div>
+        <div className="text-center lg:text-left order-2 lg:order-1">
 
           {/* Badge */}
           <div
@@ -49,20 +55,21 @@ export default function Hero() {
               bg-slate-100/80 dark:bg-white/5
               border border-slate-300 dark:border-white/10
               backdrop-blur-xl
-              px-6 py-3 rounded-full
+              px-5 sm:px-6 py-3 rounded-full
               shadow-lg dark:shadow-[0_0_30px_rgba(0,0,0,0.3)]
               mb-8
             "
           >
             <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
 
-            <span className="text-cyan-600 dark:text-cyan-400 font-semibold">
+            <span className="text-cyan-600 dark:text-cyan-400 font-semibold text-sm sm:text-base">
               Software Engineer
             </span>
           </div>
 
           {/* Heading */}
-          <h1 className="text-7xl md:text-8xl lg:text-[110px] font-black tracking-[-4px] leading-none">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[110px] font-black tracking-[-3px] sm:tracking-[-4px] leading-none">
+
             <span className="text-slate-900 dark:text-white">
               ALSON
             </span>
@@ -70,15 +77,17 @@ export default function Hero() {
             <span className="bg-gradient-to-r from-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
               {' '}A
             </span>
+
           </h1>
 
           {/* Subtitle */}
           <p
             className="
-              mt-8
-              text-xl md:text-2xl
-              leading-relaxed
+              mt-6 sm:mt-8
+              text-lg sm:text-xl md:text-2xl
+              leading-8 sm:leading-relaxed
               max-w-2xl
+              mx-auto lg:mx-0
               text-slate-700 dark:text-slate-300
               font-medium
             "
@@ -88,7 +97,7 @@ export default function Hero() {
           </p>
 
           {/* Buttons */}
-          <div className="flex flex-wrap gap-5 mt-12">
+          <div className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-5 mt-10 sm:mt-12">
 
             {/* LinkedIn */}
             <a
@@ -101,16 +110,20 @@ export default function Hero() {
                 backdrop-blur-xl
                 text-slate-900 dark:text-white
                 shadow-lg dark:shadow-[0_0_30px_rgba(0,0,0,0.3)]
-                px-8 py-4 rounded-2xl
+                px-6 sm:px-8 py-4 rounded-2xl
                 hover:bg-slate-50 dark:hover:bg-white/10
                 hover:-translate-y-1
                 transition-all duration-300
                 flex items-center gap-3
+                text-sm sm:text-base
               "
             >
-              <FaLinkedin size={22} />
+              <FaLinkedin size={20} />
 
-              <span className="font-medium">LinkedIn</span>
+              <span className="font-medium">
+                LinkedIn
+              </span>
+
             </a>
 
             {/* GitHub */}
@@ -123,16 +136,20 @@ export default function Hero() {
                 backdrop-blur-xl
                 text-slate-900 dark:text-white
                 shadow-lg dark:shadow-[0_0_30px_rgba(0,0,0,0.3)]
-                px-8 py-4 rounded-2xl
+                px-6 sm:px-8 py-4 rounded-2xl
                 hover:bg-slate-50 dark:hover:bg-white/10
                 hover:-translate-y-1
                 transition-all duration-300
                 flex items-center gap-3
+                text-sm sm:text-base
               "
             >
-              <FaGithub size={22} />
+              <FaGithub size={20} />
 
-              <span className="font-medium">GitHub</span>
+              <span className="font-medium">
+                GitHub
+              </span>
+
             </a>
 
             {/* Resume */}
@@ -145,14 +162,19 @@ export default function Hero() {
                 hover:bg-violet-500
                 text-white
                 shadow-xl
-                px-8 py-4 rounded-2xl
+                px-6 sm:px-8 py-4 rounded-2xl
                 hover:-translate-y-1
                 transition-all duration-300
                 flex items-center gap-3
+                text-sm sm:text-base
               "
             >
-              <span className="font-medium">Download Resume</span>
+              <span className="font-medium">
+                Download Resume
+              </span>
+
             </a>
+
           </div>
         </div>
 
@@ -161,11 +183,11 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
-          className="relative flex justify-center"
+          className="relative flex justify-center order-1 lg:order-2"
         >
 
           {/* Image Glow */}
-          <div className="absolute w-[240px] h-[240px] bg-violet-500/20 blur-3xl rounded-full" />
+          <div className="absolute w-[220px] sm:w-[280px] h-[220px] sm:h-[280px] bg-violet-500/20 blur-3xl rounded-full" />
 
           {/* Profile Card */}
           <div
@@ -174,23 +196,26 @@ export default function Hero() {
               bg-slate-100/80 dark:bg-white/5
               border border-slate-300 dark:border-white/10
               backdrop-blur-xl
-              rounded-[40px]
+              rounded-[32px] sm:rounded-[40px]
               p-3
               shadow-2xl dark:shadow-[0_0_60px_rgba(139,92,246,0.2)]
             "
           >
+
             <img
               src={theme === 'dark' ? profileDark : profileLight}
               alt="Alson"
               className="
-                w-[220px]
+                w-[200px]
+                sm:w-[240px]
                 md:w-[260px]
                 lg:w-[280px]
                 h-auto
                 object-contain
-                rounded-[28px]
+                rounded-[24px] sm:rounded-[28px]
               "
             />
+
           </div>
         </motion.div>
       </motion.div>

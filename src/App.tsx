@@ -8,7 +8,15 @@ import ThemeToggle from './components/ThemeToggle'
 
 export default function App() {
   return (
-    <main className="min-h-screen bg-slate-200 dark:bg-slate-950 transition-colors duration-300">
+    <main
+      className="
+        min-h-screen
+        overflow-x-hidden
+        bg-slate-200
+        dark:bg-slate-950
+        transition-colors duration-300
+      "
+    >
 
       {/* Theme Toggle */}
       <ThemeToggle />
@@ -25,6 +33,7 @@ export default function App() {
       <Projects />
 
       <Contact />
+
     </main>
   )
 }

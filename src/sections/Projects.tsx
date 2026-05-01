@@ -67,33 +67,35 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section className="relative py-32 px-6 overflow-hidden">
+    <section className="relative py-20 sm:py-24 md:py-32 px-4 sm:px-6 overflow-hidden">
 
       {/* Background Glow */}
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-cyan-500/10 blur-[120px] rounded-full" />
+      <div className="absolute top-0 left-0 w-[250px] sm:w-[500px] h-[250px] sm:h-[500px] bg-cyan-500/10 blur-[120px] rounded-full" />
 
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-violet-500/10 blur-[120px] rounded-full" />
+      <div className="absolute bottom-0 right-0 w-[250px] sm:w-[500px] h-[250px] sm:h-[500px] bg-violet-500/10 blur-[120px] rounded-full" />
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto w-full relative z-10">
 
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-20"
+          className="mb-14 sm:mb-20"
         >
-          <p className="text-cyan-500 dark:text-cyan-400 font-semibold tracking-widest uppercase mb-4">
+
+          <p className="text-cyan-500 dark:text-cyan-400 font-semibold tracking-widest uppercase mb-4 text-sm sm:text-base">
             Projects
           </p>
 
-          <h2 className="text-5xl md:text-7xl font-black text-slate-900 dark:text-white tracking-tight">
+          <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-slate-900 dark:text-white tracking-tight leading-tight">
             Featured Work
           </h2>
+
         </motion.div>
 
         {/* Project Grid */}
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
 
           {projects.map((project, index) => (
             <motion.div
@@ -111,7 +113,7 @@ export default function Projects() {
               className="
                 group
                 relative overflow-hidden
-                rounded-[36px]
+                rounded-[30px] sm:rounded-[36px]
                 border border-slate-300 dark:border-white/10
                 bg-slate-100/90 dark:bg-[#07101f]
                 backdrop-blur-xl
@@ -139,12 +141,13 @@ export default function Projects() {
               />
 
               {/* Content */}
-              <div className="relative z-10 p-10">
+              <div className="relative z-10 p-6 sm:p-8 md:p-10">
 
                 {/* Icon */}
                 <div
                   className="
-                    w-14 h-14 rounded-2xl
+                    w-12 h-12 sm:w-14 sm:h-14
+                    rounded-2xl
                     bg-white dark:bg-white/5
                     border border-slate-300 dark:border-white/10
                     flex items-center justify-center
@@ -158,8 +161,8 @@ export default function Projects() {
                 {/* Title */}
                 <h3
                   className="
-                    mt-8
-                    text-3xl md:text-4xl
+                    mt-6 sm:mt-8
+                    text-2xl sm:text-3xl md:text-4xl
                     font-black
                     leading-tight
                     text-slate-900 dark:text-white
@@ -171,9 +174,9 @@ export default function Projects() {
                 {/* Description */}
                 <p
                   className="
-                    mt-6
-                    text-lg
-                    leading-9
+                    mt-5 sm:mt-6
+                    text-base sm:text-lg
+                    leading-8 sm:leading-9
                     text-slate-700 dark:text-slate-300
                   "
                 >
@@ -181,7 +184,7 @@ export default function Projects() {
                 </p>
 
                 {/* Tags */}
-                <div className="flex flex-wrap gap-3 mt-10">
+                <div className="flex flex-wrap gap-3 mt-8 sm:mt-10">
 
                   {project.tech.map((tech) => (
                     <span
